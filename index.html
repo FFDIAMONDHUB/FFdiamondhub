@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FF Diamond Hub - Claim Now</title>
+  <title>FF Diamond Hub</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #1f4037, #99f2c8);
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       margin: 0; padding: 20px;
       color: #fff;
     }
@@ -18,11 +18,11 @@
       text-shadow: 2px 2px #000;
     }
     .pack {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       padding: 20px;
       margin: 20px auto;
-      max-width: 500px;
-      border-radius: 12px;
+      max-width: 400px;
+      border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
     button {
@@ -61,81 +61,74 @@
       color: #00ffe0;
       margin-bottom: 10px;
     }
-    .ad-box {
-      background: #fff;
-      color: #000;
-      text-align: center;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
   </style>
   <script>
-    function showAdThenForm(id) {
-      const adBox = document.getElementById("ad-" + id);
-      const form = document.getElementById("form-" + id);
-      adBox.style.display = "block";
-      setTimeout(() => {
-        adBox.style.display = "none";
-        form.style.display = "block";
-      }, 5000); // 5 sec wait as fake ad
+    function showForm(id) {
+      document.querySelectorAll("form").forEach(f => f.style.display = "none");
+      document.getElementById("form-" + id).style.display = "block";
     }
-
-    function submitForm(e, item) {
+    function submitForm(e, pack) {
       e.preventDefault();
       document.getElementById("popup").style.display = "block";
-      document.getElementById("popup-msg").innerText = "🎉 Congratulations!\nआपके " + item + " मेल बॉक्स में भेज दिए गए हैं!";
+      document.getElementById("popup-msg").innerText = "🎉 Congratulations!\nआपके " + pack + " डायमंड भेज दिए गए हैं।\nअपना मेलबॉक्स चेक करें!";
       setTimeout(() => {
         document.getElementById("popup").style.display = "none";
-      }, 4000);
+      }, 5000);
       e.target.reset();
     }
   </script>
 </head>
 <body>
-  <h1>💎 FF Diamond Hub – Claim Rewards 💎</h1>
+  <h1>💎 FF Diamond Hub 💎</h1>
 
-  <div class="pack">
-    <h3>100 Diamonds</h3>
-    <button onclick="showAdThenForm('100')">Claim Now</button>
-    <div class="ad-box" id="ad-100" style="display:none;">▶️ Ad Loading... Please wait...</div>
-    <form id="form-100" onsubmit="submitForm(event, '100 Diamonds')">
-      <input type="text" placeholder="Free Fire UID" required />
-      <select required>
+  <div class="pack"><h3>100 Free Diamonds</h3>
+    <button onclick="showForm('100')">Claim Now</button>
+    <form id="form-100" onsubmit="submitForm(event, '100')">
+      <input type="text" name="uid" placeholder="Free Fire User ID" required />
+      <select name="server" required>
         <option value="">Select Server</option>
         <option>India</option><option>Brazil</option><option>Indonesia</option>
       </select>
-      <input type="email" placeholder="Email (optional)" />
+      <input type="email" name="email" placeholder="Email (optional)" />
       <button type="submit">Submit</button>
     </form>
   </div>
 
-  <div class="pack">
-    <h3>Magic Cube</h3>
-    <button onclick="showAdThenForm('cube')">Claim Now</button>
-    <div class="ad-box" id="ad-cube" style="display:none;">▶️ Ad Loading... Please wait...</div>
-    <form id="form-cube" onsubmit="submitForm(event, 'Magic Cube')">
-      <input type="text" placeholder="Free Fire UID" required />
-      <select required>
+  <div class="pack"><h3>310 Free Diamonds</h3>
+    <button onclick="showForm('310')">Claim Now</button>
+    <form id="form-310" onsubmit="submitForm(event, '310')">
+      <input type="text" name="uid" placeholder="Free Fire User ID" required />
+      <select name="server" required>
         <option value="">Select Server</option>
         <option>India</option><option>Brazil</option><option>Indonesia</option>
       </select>
-      <input type="email" placeholder="Email (optional)" />
+      <input type="email" name="email" placeholder="Email (optional)" />
       <button type="submit">Submit</button>
     </form>
   </div>
 
-  <div class="pack">
-    <h3>Spin & Win Reward</h3>
-    <button onclick="showAdThenForm('spin')">Claim Now</button>
-    <div class="ad-box" id="ad-spin" style="display:none;">▶️ Ad Loading... Please wait...</div>
-    <form id="form-spin" onsubmit="submitForm(event, 'Spin & Win Reward')">
-      <input type="text" placeholder="Free Fire UID" required />
-      <select required>
+  <div class="pack"><h3>520 Free Diamonds</h3>
+    <button onclick="showForm('520')">Claim Now</button>
+    <form id="form-520" onsubmit="submitForm(event, '520')">
+      <input type="text" name="uid" placeholder="Free Fire User ID" required />
+      <select name="server" required>
         <option value="">Select Server</option>
         <option>India</option><option>Brazil</option><option>Indonesia</option>
       </select>
-      <input type="email" placeholder="Email (optional)" />
+      <input type="email" name="email" placeholder="Email (optional)" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="pack"><h3>Elite Pass</h3>
+    <button onclick="showForm('elite')">Claim Now</button>
+    <form id="form-elite" onsubmit="submitForm(event, 'Elite Pass')">
+      <input type="text" name="uid" placeholder="Free Fire User ID" required />
+      <select name="server" required>
+        <option value="">Select Server</option>
+        <option>India</option><option>Brazil</option><option>Indonesia</option>
+      </select>
+      <input type="email" name="email" placeholder="Email (optional)" />
       <button type="submit">Submit</button>
     </form>
   </div>
