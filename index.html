@@ -223,6 +223,16 @@
         <p>Complete tasks, refer friends, and earn amazing rewards!</p>
     </div>
 
+<div class="ad-container">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6794851357390069"
+       data-ad-slot="7518485603"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
     <div class="points-display">
         <div style="font-size: 14px;">YOUR POINTS BALANCE</div>
         <span id="pointsCounter">0</span> Points
@@ -359,7 +369,7 @@
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-6794851357390069"
-                 data-ad-slot="7518485603"
+                 data-ad-slot="9660760769"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
@@ -695,69 +705,5 @@
         // Initialize referral check
         checkForReferral();
     </script>
-
-<!-- App Open Ad Simulation -->
-<div id="appOpenAdOverlay" style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    z-index: 9999;
-    display: none;">
-    <div style="text-align: center;">
-        <p>🔓 App Open Ad</p>
-        <p>(Simulated)</p>
-        <button onclick="document.getElementById('appOpenAdOverlay').style.display='none'" style="padding: 10px 20px; font-size: 18px;">Continue</button>
-    </div>
-</div>
-
-<script>
-    // Show App Open Ad on load (simulate)
-    window.addEventListener('load', function() {
-        document.getElementById('appOpenAdOverlay').style.display = 'flex';
-    });
-</script>
-
-<!-- Simulated Reward Ad on "Watch Video" -->
-<script>
-function completeTask(taskId, pointsToAdd) {
-    if(userData.completedTasks.includes(taskId)) {
-        alert('You already completed this task!');
-        return;
-    }
-
-    // Simulate ad before task reward
-    const adOverlay = document.createElement('div');
-    adOverlay.id = 'rewardAdOverlay';
-    adOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:9999;display:flex;align-items:center;justify-content:center;color:white;font-size:22px;';
-    adOverlay.innerHTML = `
-        <div style="text-align:center;">
-            <p>🎥 Watching Ad...</p>
-            <p>(Simulated Reward Ad)</p>
-            <button onclick="finishRewardAd('${taskId}', ${pointsToAdd})" style="margin-top:20px;padding:10px 20px;font-size:18px;">Close Ad</button>
-        </div>`;
-    document.body.appendChild(adOverlay);
-}
-
-function finishRewardAd(taskId, pointsToAdd) {
-    document.getElementById('rewardAdOverlay').remove();
-
-    userData.points += pointsToAdd;
-    userData.completedTasks.push(taskId);
-    saveUserData();
-    updateUI();
-
-    const taskName = tasks.find(t => t.id === taskId).name;
-    alert(`Task completed!\n"${taskName}"\n+${pointsToAdd} points added to your account.`);
-}
-</script>
-
 </body>
 </html>
